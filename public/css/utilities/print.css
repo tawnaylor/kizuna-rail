@@ -1,0 +1,126 @@
+@media print {
+    @page {
+        margin: 12mm;
+    }
+
+    body:has(.confirmation-page) {
+        display: block;
+        min-height: 0;
+        background: white;
+        color: black;
+
+        > header,
+        > footer,
+        .confirmation-actions,
+        .next-steps,
+        .important-info,
+        .success-icon,
+        .confirmation-message {
+            display: none;
+        }
+
+        main.content-grid {
+            display: block;
+            padding: 0;
+            margin: 0;
+        }
+
+        article.confirmation-page {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+
+            .confirmation-header {
+                gap: 4px;
+                padding: 0 0 8px;
+                margin-bottom: 8px;
+                border: 0;
+                background: white;
+            }
+
+            .booking-reference {
+                flex-direction: row;
+                gap: 12px;
+                padding: 4px 12px;
+                margin-top: 0;
+            }
+
+            .confirmation-content {
+                gap: 12px;
+            }
+
+            .section-title {
+                margin-bottom: 8px;
+                padding-bottom: 4px;
+            }
+
+            .details-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 6px;
+            }
+
+            .detail-card {
+                padding: 6px;
+                gap: 6px;
+            }
+
+            .detail-icon {
+                display: none;
+            }
+
+            .payment-summary p {
+                display: inline-block;
+                margin: 0 16px 0 0;
+            }
+
+            .passengers-list {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
+            }
+
+            .passenger-header,
+            .passenger-details {
+                padding: 6px 8px;
+            }
+
+            .passenger-details {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .passenger-detail {
+                gap: 0;
+            }
+
+            .passenger-value {
+                overflow-wrap: anywhere;
+            }
+
+            .important-info {
+                padding: 8px;
+            }
+
+            .info-title {
+                margin-bottom: 4px;
+            }
+
+            .info-list {
+                gap: 0;
+            }
+
+            .detail-card,
+            .passenger-info-card,
+            .booking-reference,
+            .important-info {
+                break-inside: avoid;
+                box-shadow: none;
+            }
+
+            h2,
+            h3 {
+                break-after: avoid;
+            }
+        }
+    }
+}
